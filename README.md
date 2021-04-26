@@ -1,25 +1,47 @@
 # Facial Recognition Software
 
-Programming Language : Python
+INSTALLATION:
+----------------------------------
+Make sure you have Python 3.6.8 (x64 bit) Installed
 
-Python Version: 3.6.8 x64bit
+Open the folder where you downloaded FacialRecognitionSoftware-master.zip and unzip the folder.
 
-Web Framework: Django 
+Open Command Promt (CMD) in that folder.
 
-Models:
-1) Face Detection : MTCNN Model
-2) Face Recognition : Inception Resnet Model
+Install Virtualenv Module in Python using command:
+- pip install virtualenv
 
-Image Reading Module: Pillow and OpenCV
+Now create a virtual environment folder using:
+- virtualenv venv
 
-AI Model Framework: PyTorch(CPU version)
+This will take you to the vitual environment folder which is created right now.
+- cd venv
 
-Model Working Breif:
-1) Web App allows user to Upload their Photo.
-2) Then selected image is passed inside Face Detection Model(MTCNN) to detect faces.
-3) If multiple faces are found then biggest face is selected automatically.
-4) Then detected face ROI ( Region of Interest ) is aligned correctly if face is tilted in any direction.
-5) Then the Face Recognition Model reads all Known Faces Images one by one.
-6) Then aligned Unknown Face is passed into Face Recognition Model to match with Known Faces.
-7) When face matches with any face then it Gives the access.
-8) Else Access is Denied.
+Activate the virtual environment using:
+- scripts\activate
+
+Create new folder inside venv called "apps"
+
+Extract all the ZIP app code files inside "apps" folder.
+
+Now install all required modules using commands:
+- cd apps
+- pip install -r requirements.txt
+
+Check for manage.py file and cd to that directory or folder.
+
+Now run this command to run the Face recognition App:
+- python manage.py runserver
+
+Once it runs successfully now you can open you browser and type this URL in Browser:
+- 127.0.0.1:8000
+
+Now you will be inside the Web app and you can test it as you want.
+-----------------------------------
+
+How To Start Again After Installation:
+
+Open CMD in "venv" folder
+- scripts\activate
+- cd apps
+- python manage.py runserver
