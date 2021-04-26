@@ -1,7 +1,9 @@
 # FacialRecognitionSoftware
 
 Programming Language : Python
+
 Python Version: 3.6.8 x64bit
+
 Web Framework: Django 
 
 Models:
