@@ -1,4 +1,4 @@
-# FacialRecognitionSoftware
+# Facial Recognition Software
 
 Programming Language : Python
 
