@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://www.vigilantsolutions.com/wp-content/uploads/facialrecog.jpg" type="image/x-icon">
+    <title>Face Recognition</title>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/upload.css" />
+    <style>
+    #page{
+display: none;
+position: absolute;
+top:0;
+left:0;
+width: 100%;
+height:100%;
+background: rgba(255, 255, 255,0.66);
+}
+#preview{
+border:1px dashed white;
+width:auto;
+height:100%;
+min-height:26rem;
+max-height:26rem;
+padding:2%;
+background:#DEE2EC;
+
+}
+#loading {
+  position: absolute;
+  opacity:100%;
+  top: 40%;
+  left: 45%;
+z-index: 999;
+  background-position: center;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="nav_bar">
+      <nav>
+        <a href="{% url 'base' %}" class="nav_link">Home</a>
+        <a href="{% url 'info' %}" class="nav_link">Info</a>
+        <a href="{% url 'upload-image' %}" class="nav_link">Face Recognition</a>
+        <a href="{% url 'contactus' %}" class="nav_link">Contact Us</a>
+      </nav>
+      <hr class="newlie" />
+    </div>
+    <main>
+      <form action="{% url 'access-grant' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      <div class="content">
+        <div class="upper-form">
+          <div class="left-section">
+            <div class="form">
+                <img src="{{ image }}" id="preview">
+            </div>
+          </div>
+          <div class="right-section">
+            <button type="submit" id="submission" hidden></button>
+            <input type="text" id="img-src" name="img-src" value="" hidden/>
+            <button type="button" class="nav_link" style="margin-top:0;" onclick="Face_Recognition()">RESET</button>
+
+          </div>
+        </div>
+      </div>
+      </form>
+    </main>
+  <div class="lower-form">
+          <div class="alert"><span>{{ access }}</span></div>
+        </div>
+  </body>
+<script>
+function Face_Recognition(){
+window.location.href="{% url 'upload-image' %}";
+}
+</script>
+</html>
